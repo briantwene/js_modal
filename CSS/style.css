@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/*set default font size to 10px*/
+html {
+  font-size: 62.5%;
+}
+/*body settings */
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgb(1, 164, 255);
+  background: linear-gradient(
+    45deg,
+    rgba(1, 164, 255, 1) 0%,
+    rgba(198, 0, 255, 1) 100%
+  );
+  font-family: "Nunito Sans", sans-serif;
+}
+
+header {
+  color: white;
+  font-size: 6em;
+  padding: 1em;
+  font-weight: 600;
+}
+
+button {
+  cursor: pointer;
+}
+
+/*modal button settings*/
+.open-modal {
+  width: 65%;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 3em;
+  height: 10%;
+  border: none;
+  border-radius: 1em;
+  box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.6);
+}
+
+/*footer settings*/
+footer {
+  padding: 1em;
+  font-size: 2em;
+  text-align: center;
+  color: white;
+}
+
+/*for keeping the links the same in certain states*/
+a,
+a:active,
+a:visited {
+  color: white;
+}
+/*when hovered the underline will disappear*/
+a:hover {
+  text-decoration: none;
+}
+
+/*background area of the modal*/
+.modal-background {
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.75s;
+}
+
+/*the modal itself*/
+.modal {
+  width: 85%;
+  height: 40%;
+  padding: 3em;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 85% 15%;
+  grid-template-rows: 20% 80%;
+  border-radius: 10px;
+  box-shadow: 0 3em 5em rgba(0, 0, 0, 0.3);
+}
+/*text formatting in the modal*/
+h1 {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  font-size: 2em;
+}
+
+p {
+  font-size: 1.4em;
+}
+/*close button in the modal*/
+.close {
+  grid-column: 2/3;
+  font-size: 4em;
+  font-weight: 700;
+  background-color: transparent;
+  border: none;
+}
+/*class that will be used by JS to display the modal*/
+.hidden {
+  display: none;
+}
+/*settings for larger screens (Tablet and up)*/
+@media (min-width: 768px) {
+  .open-modal {
+    width: 30%;
+  }
+
+  .modal {
+    width: 40%;
+    height: 60%;
+  }
+
+  h1 {
+    font-size: 4em;
+  }
+
+  p {
+    font-size: 2.2em;
+  }
+}
